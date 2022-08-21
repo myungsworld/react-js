@@ -5,10 +5,15 @@ import Subject from "./components/Subject"
 
 
 function App() {
+  const topics = [
+    {id : 1 , title:"Song"},
+    {id : 2 , title : "Dong"},
+    {id : 3 , title :"Myung"}
+  ]
   return (
     <div className='App'>
-      <Subject title="React" sub="world wide web!"></Subject>
-      <TOC></TOC>
+      <Subject title="Web" sub="world wide web!"></Subject>
+      <TOC topics={topics}></TOC>
       <Content title="HTML" desc="HTML is HyperText Markup Language."></Content>
     </div>
   );

@@ -1,10 +1,13 @@
-function TOC() {
-    return (
+function TOC(props) {
+  const lis = []
+  const topics = props.topics
+  const listItems = topics.map((topic) => {
+    lis.push(<li key={topic.id}><a href={"/"+topic.id}>{topic.title}</a></li>)
+  })
+  return (
       <nav>
         <ul>
-          <li><a href="1.html">HTML</a></li>
-          <li><a href="2.html">CSS</a></li>
-          <li><a href="3.html">JavaScript</a></li>
+          {lis}
         </ul>
       </nav> 
     );
