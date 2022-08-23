@@ -135,14 +135,6 @@ function App() {
         </a>
       </li>
       {contextControl}
-      <button
-        type="button"
-        onClick={() => {
-          console.log(nextId);
-        }}
-      >
-        하하
-      </button>
     </div>
   );
 }
