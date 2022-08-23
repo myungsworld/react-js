@@ -35,7 +35,10 @@ function App() {
           };
           let newTopics = [...topics];
           newTopics.push(newTopic);
+          setNextId(nextId + 1);
           setTopics(newTopics);
+          setId(nextId);
+          setMode("READ");
         }}
       ></Create>
     );

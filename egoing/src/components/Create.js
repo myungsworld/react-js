@@ -3,6 +3,7 @@ function Create(props) {
     <article>
       <form
         onSubmit={(event) => {
+          console.log("ㅎㅎ");
           event.preventDefault();
           const title = event.target.title.value;
           const description = event.target.description.value;
@@ -16,7 +17,7 @@ function Create(props) {
           <textarea name="description" placeholder="description"></textarea>
         </p>
         <p>
-          <input type="button" value="Create"></input>
+          <button type="submit">버튼</button>
         </p>
       </form>
     </article>
