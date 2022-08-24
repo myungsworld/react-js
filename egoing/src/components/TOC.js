@@ -8,6 +8,7 @@ function TOC(props) {
           href={"/" + topic.id}
           onClick={(event) => {
             event.preventDefault();
+            console.log("TOC id: ", event.target.id);
             props.onChangeMod(Number(event.target.id));
           }}
         >

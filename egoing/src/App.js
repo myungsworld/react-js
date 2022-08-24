@@ -26,8 +26,15 @@ function App() {
     if (topics.length === 0) {
       setMode("WELCOME");
     } else {
-      title = topics[id - 1].title;
-      description = topics[id - 1].description;
+      let title,
+        description = null;
+      for (let i = 0; i < topics.length; i++) {
+        if (topics[i].id === id) {
+          title = topics[i].title;
+          description = topics[i].description;
+        }
+      }
+
       content = <Content title={title} description={description}></Content>;
       contextControl = (
         <>
@@ -54,9 +61,6 @@ function App() {
                 setTopics(newDTopics);
                 setNextId(newDTopics.length + 1);
                 setMode("WELCOME");
-                console.log(newDTopics);
-                console.log("nextid:", nextId);
-                console.log("id:", id);
               }}
             >
               Delete
@@ -135,6 +139,16 @@ function App() {
         </a>
       </li>
       {contextControl}
+      <button
+        type="button"
+        onClick={() => {
+          console.log("id :", id);
+          console.log("nextid :", nextId);
+          console.log("topics :", topics);
+        }}
+      >
+        디버깅
+      </button>
     </div>
   );
 }
