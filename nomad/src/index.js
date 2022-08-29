@@ -4,6 +4,7 @@ import App from "./App";
 import Example from "./example2/app";
 import Todo from "./todo/App";
 import CoinTracker from "./coinTracker/app";
+import Movie from "./movie/app";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -12,7 +13,8 @@ root.render(
     {/* <App /> */}
     {/* <Example /> */}
     {/* <Todo></Todo> */}
-    <CoinTracker></CoinTracker>
+    {/* <CoinTracker></CoinTracker> */}
+    <Movie />
   </React.StrictMode>
 );
 
