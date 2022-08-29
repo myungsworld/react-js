@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import Example from "./example2/app";
 import Todo from "./todo/App";
+import CoinTracker from "./coinTracker/app";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -10,7 +11,8 @@ root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Example /> */}
-    <Todo></Todo>
+    {/* <Todo></Todo> */}
+    <CoinTracker></CoinTracker>
   </React.StrictMode>
 );
 
