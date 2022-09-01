@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 function Data({ id, coverImg, title, summary }) {
-  console.log(id);
   return (
     <ul>
       <img src={coverImg}></img>
