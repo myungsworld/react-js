@@ -9,14 +9,8 @@ function App() {
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
-      console.log("-----");
-      console.log(user);
-      console.log("-----");
       if (user) {
-        console.log("히히");
         setIsLoggedIn(true);
-        console.log(isLoggedIn);
-        console.log(init);
         const uid = user.uid;
       } else {
         setIsLoggedIn(false);
@@ -24,6 +18,7 @@ function App() {
       setInit(true);
     });
   }, []);
+
   return (
     <>
       {init ? (
