@@ -2,10 +2,12 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "../router/home";
 import Auth from "../router/auth";
 import Navigation from "./navigation";
+import Title from "../components/title";
 import Profile from "../router/profile";
 function AppRouter(props) {
   return (
     <>
+      <Title />
       <BrowserRouter>
         {props.isLoggedIn && <Navigation />}
         <Routes>
