@@ -1,7 +1,9 @@
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GoogleAuthProvider,
   signInWithEmailAndPassword,
+  signInWithPopup,
 } from "firebase/auth";
 import React, { useState } from "react";
 
@@ -31,13 +33,27 @@ const Auth = () => {
       } else {
         data = await signInWithEmailAndPassword(auth, email, password);
       }
-      console.log(data);
     } catch (error) {
-      console.log("---");
       console.log(error);
-      console.log("---");
     }
   };
+
+  const onClickGoogle = async (event) => {
+    const {
+      target: { name },
+    } = event;
+    let provider;
+
+    try {
+      provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      console.log(credential);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -68,7 +84,9 @@ const Auth = () => {
           />
         </p>
       </form>
-      <button>Continue with google</button>
+      <button onClick={onClickGoogle} name="google">
+        Continue with google
+      </button>
     </div>
   );
 };
